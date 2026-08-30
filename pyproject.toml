@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "subhunter"
+version = "2.0.0"
+description = "Fast & accurate subdomain enumeration tool for Kali Linux / security research"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "SubHunter Contributors" }]
+keywords = ["subdomain", "enumeration", "recon", "kali-linux", "bug-bounty", "osint", "pentest"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Intended Audience :: Information Technology",
+]
+dependencies = [
+    "aiohttp>=3.9.0",
+    "dnspython>=2.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TheGhostWasi/subhunter"
+Repository = "https://github.com/TheGhostWasi/subhunter"
+Issues = "https://github.com/TheGhostWasi/subhunter/issues"
+
+[project.scripts]
+subhunter = "subhunter.cli:main"
+
+[project.optional-dependencies]
+config = ["PyYAML>=6.0"]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21"]
+
+[tool.setuptools]
+packages = ["subhunter", "subhunter.core", "subhunter.sources", "subhunter.output"]
+
+[tool.setuptools.package-data]
+subhunter = ["wordlists/*.txt"]

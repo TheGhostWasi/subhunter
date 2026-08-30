@@ -1,0 +1,7 @@
+# Core dependencies (required)
+aiohttp>=3.9.0
+dnspython>=2.4.0
+
+# Optional: only needed if you want ~/.config/subhunter/config.yaml support.
+# SubHunter runs fine without it — config loading is silently skipped if missing.
+# PyYAML>=6.0
